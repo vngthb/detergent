@@ -400,7 +400,7 @@ get_url_file(URL) ->
     end.
 
 get_remote_file(URL) ->
-    case httpc:request(URL) of
+    case httpc:request(get, {URL, []}, [{ssl, [{verify, verify_none}]}], []) of
     {ok,{{_HTTP,200,_OK}, _Headers, Body}} ->
         {ok, Body};
     {ok,{{_HTTP,RC,Emsg}, _Headers, _Body}} ->
