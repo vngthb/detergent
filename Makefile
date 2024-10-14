@@ -1,9 +1,4 @@
-.PHONY: all compile clean
+PROJECT = detergent
+PROJECT_DESCRIPTION = An emulsifying Erlang SOAP library
 
-all: compile
-
-compile:
-	@./rebar compile
-
-clean:
-	@./rebar clean
+include erlang.mk
